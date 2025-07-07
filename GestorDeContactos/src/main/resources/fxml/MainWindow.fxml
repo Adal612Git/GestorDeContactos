@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gestordecontactos.ui.MainWindowController" fx:resources="com/gestordecontactos/i18n/Messages">
+    <top>
+        <ToolBar>
+            <Button text="%add" onAction="#onAdd" />
+            <Button text="%edit" onAction="#onEdit" />
+            <Button text="%delete" onAction="#onDelete" />
+            <Button text="%search" onAction="#onSearch" />
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="tableView" prefHeight="400" prefWidth="600">
+            <columns>
+                <TableColumn fx:id="nameCol" text="%name" prefWidth="150" />
+                <TableColumn fx:id="emailCol" text="%email" prefWidth="200" />
+                <TableColumn fx:id="phoneCol" text="%phone" prefWidth="150" />
+                <TableColumn fx:id="birthdayCol" text="%birthday" prefWidth="100" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
