@@ -1,8 +1,10 @@
 package com.gestordecontactos.model;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
@@ -13,12 +15,14 @@ import java.util.List;
  * Modelo de contacto.
  */
 public class Contacto {
+    private final IntegerProperty id = new SimpleIntegerProperty();
     private final StringProperty nombre = new SimpleStringProperty();
     private final StringProperty email = new SimpleStringProperty();
     private final StringProperty telefono = new SimpleStringProperty();
     private final ObjectProperty<LocalDate> fechaCumple = new SimpleObjectProperty<>();
     private final List<Etiqueta> etiquetas = new ArrayList<>();
 
+    public IntegerProperty idProperty() { return id; }
     public StringProperty nombreProperty() { return nombre; }
     public StringProperty emailProperty() { return email; }
     public StringProperty telefonoProperty() { return telefono; }

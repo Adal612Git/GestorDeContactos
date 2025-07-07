@@ -1,6 +1,8 @@
 package com.gestordecontactos.app;
 
 import com.gestordecontactos.infra.DatabaseConfig;
+import com.gestordecontactos.dao.ContactoDAO;
+import com.gestordecontactos.dao.SQLiteContactoDAO;
 import com.gestordecontactos.service.HelloService;
 import com.gestordecontactos.utils.ConfigProperties;
 import com.google.inject.AbstractModule;
@@ -14,6 +16,7 @@ public class AppConfig extends AbstractModule {
     protected void configure() {
         bind(ConfigProperties.class).asEagerSingleton();
         bind(DataSource.class).toProvider(DatabaseConfig.class).asEagerSingleton();
+        bind(ContactoDAO.class).to(SQLiteContactoDAO.class).asEagerSingleton();
         bind(HelloService.class);
     }
 }
